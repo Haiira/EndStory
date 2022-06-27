@@ -1,0 +1,11 @@
+@import url(index.css);
+
+@font-face {
+    font-family: 'FZCuHeiSong';     /*方正粗黑宋*/
+    src: url(../Fonts/FZCuHeiSong.eot);
+    src: url(../Fonts/FZCuHeiSong.ttf) format('truetype');
+}
+
+body{
+    background-color: black;
+}
