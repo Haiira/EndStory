@@ -5,6 +5,6 @@ function my$(id){
 }
 
 // 加载第三方字体完成后关闭加载界面
-document.fonts.ready.then(function () {
+window.onload = function() {
     my$("loading").style.display = 'none';
-})
+}

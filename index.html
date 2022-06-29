@@ -27,6 +27,13 @@
     <div id="square"></div>
     <script type="text/JavaScript">
         let sqr = my$("square")
+
+        window.addEventListener('load', function() {
+          // 手机端访问，则隐藏旋转方块
+          if (navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+               sqr.style.display = "none";}
+            })
+
         let event_x=0; event_y=0; x=0; y=0; count=0;
         window.addEventListener('mousemove', (ev)=>{
             event_x = ev.x - sqr.offsetLeft - sqr.clientWidth/2;
