@@ -2,25 +2,60 @@
 
 @font-face {
     font-family: 'FZCuHeiSong'; /*方正粗黑宋*/
-    src: url(../Fonts/FZCuHeiSong.eot);
-    src: url(../Fonts/FZCuHeiSong.woff) format('woff'),
-        url(../Fonts/FZCuHeiSong.ttf) format('truetype');
+    src: url(../fonts/FZCuHeiSong.eot);
+    src: url(../fonts/FZCuHeiSong.eot#iefix) format('embedded-opentype'),
+        url(../fonts/FZCuHeiSong.woff) format('woff'),
+        url(../fonts/FZCuHeiSong.ttf) format('truetype');
 }
 
-/*初始化清除内外边距*/
+/*初始化元素，清除内外边距，设置默认鼠标*/
 * {
-    padding: 0;
-    margin: 0;
+    padding: 0; margin: 0; 
+    cursor: url(../images/cursor/pointer.png), default
 }
 
 body{
     background-color: rgb(28, 28, 28);
 }
 
+/*加载动画*/
+#loading{
+    position: fixed;/*固定位置*/
+    display: flex;/*出于居中需要使用弹性布局*/
+    flex-direction: column;/*item垂直方向排列*/
+    align-items: center;/*内容垂直居中*/
+    justify-content: center;/*内容水平居中*/
+    z-index: 20;
+    left: 0px; top: 0px;
+    width: 100%; height: 100%;
+    background-color: rgb(28, 28, 28);
+    color: aliceblue;
+}
+#loading span{
+    display: inline-block;
+    width: 15px; height: 20px;
+    margin: 4px;
+    background-color: rgb(226, 226, 226);
+    opacity: 0.2;
+    animation: load 1.5s ease infinite;
+    
+}
+@keyframes load {
+    0%,100% { opacity: 0.1; background-color: rgb(226, 226, 226); }
+    50% { opacity: 1; background-color: rgb(138, 216, 255); }
+}
+#load { height: 40px;}
+#load span:nth-child(1){ animation-delay: 0.12s; }
+#load span:nth-child(2){ animation-delay: 0.24s; }
+#load span:nth-child(3){ animation-delay: 0.36s; }
+#load span:nth-child(4){ animation-delay: 0.48s; }
+#load span:nth-child(5){ animation-delay: 0.6s; }
+
 /*透明主框图*/
 .main{
     margin: auto;
-    width: 1200px;
+    left: 0px; top: 0px;
+    width: 75%;
     height: 500px;
 }
 
@@ -28,18 +63,18 @@ body{
 .banner{
     margin: auto; /*居中与文本居中*/
     text-align: center;
-    width: 100%;
-    height: 20px;
+    width: 100%; height: 20px;
+    padding: 10px 0px;
 }
 /*菜单栏内部文字*/
-.banner_btn{
+.banner div{
     display: inline-block;
-    width: 200px;
+    width: 15%;
     color: aliceblue;
     font-weight: bold;
     opacity: 0.7;
 }
-.banner_btn:hover{
+.banner div:hover{
     opacity: 1;
     cursor: pointer;
 }
