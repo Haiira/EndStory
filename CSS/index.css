@@ -1,9 +1,11 @@
+/*大标题*/
 .index_main_header{
     color: rgb(226, 226, 226);
     font-family: "FZCuHeiSong", cursive, serif, sans-serif;
     font-size: 100px;
 }
 
+/*大标题背景*/
 .index_header_background{
-    background-color: rgb(8, 7, 60);
+    background-color: rgb(30, 30, 70);
 }
