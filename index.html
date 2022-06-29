@@ -24,6 +24,29 @@
         <div>Loading</div>
     </div>
 
+    <div id="square"></div>
+    <script type="text/JavaScript">
+        let sqr = my$("square")
+        let event_x=0; event_y=0; x=0; y=0; count=0;
+        window.addEventListener('mousemove', (ev)=>{
+            event_x = ev.x - sqr.offsetLeft - sqr.clientWidth/2;
+            event_y = ev.y - sqr.offsetTop - sqr.clientHeight/2;
+            count = 0;
+        })
+        function draw(){
+            sqr.style.offsetLeft = x + event_x;
+            sqr.style.offsetHeight = y + event_y;
+            if (count < 100){
+                x += event_x / 100;
+                y += event_y / 100;
+            }
+            sqr.style.left = x + "px";
+            sqr.style.top = y + "px";
+            count++;
+        }
+        setInterval(draw, 1)
+    </script>
+
     <!---->
     <div class="banner">
         <div>关系网</div>

@@ -51,6 +51,22 @@ body{
 #load span:nth-child(4){ animation-delay: 0.48s; }
 #load span:nth-child(5){ animation-delay: 0.6s; }
 
+/*跟随方块动画*/
+#square{
+    position: absolute;
+    z-index: -5;
+    width: 40px; height: 40px;
+    border-width: 3px;
+    border-style: groove;
+    border-color: aliceblue;
+    animation: sqr_rotate 5s ease infinite;
+    transform:rotate(45deg)
+}
+@keyframes sqr_rotate {
+    0% {transform: rotateZ(765deg);}
+    100% {}
+}
+
 /*透明主框图*/
 .main{
     margin: auto;
