@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="CSS/style.css" />
     <script type="text/JavaScript" src="JS/general.js"></script>
-
 </head>
+
 <body>
 
     <!--加载动画-->
@@ -45,13 +45,6 @@
                 event_y = ev.y - sqr.offsetTop - sqr.clientHeight/2;
                 count = 0;
             })
-            window.onscroll = function () {
-                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-                delta = scrollTop - org_scrollTop;
-                event_y += delta;
-                org_scrollTop = scrollTop;
-                count = 0;
-            }
             function draw(){
                 sqr.style.offsetLeft = x + event_x;
                 sqr.style.offsetHeight = y + event_y;
@@ -81,7 +74,7 @@
             <p class="index_main_en no_select">- Androsa's EndStory -</p>
         </div>
 
-        <p style="margin-top: 50px; color: aliceblue; text-align: center;">还在施工，我爬我爬……</p>
+        <div class="line"></div>
 
     </div>
 </body>
