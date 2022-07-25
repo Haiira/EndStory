@@ -4,7 +4,7 @@ function my$(id){
     return res;
 }
 
-// 加载第三方字体完成后关闭加载界面
+// 加载完成后关闭加载界面
 window.onload = function() {
     my$("loading").style.display = 'none';
 }

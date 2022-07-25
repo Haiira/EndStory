@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安城纪事</title>
 
-    <link rel="stylesheet" href="CSS/style.css" />
-    <script type="text/JavaScript" src="JS/general.js"></script>
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <script type="text/JavaScript" src="/JS/general.js"></script>
 </head>
 
 <body>
@@ -22,6 +22,8 @@
             <span></span>
         </div>
         <div>Loading</div>
+        <div style="opacity: 0.4;margin-top: 20px;">加载可能需要花费数分钟时间</div>
+        <div style="opacity: 0.4;">也许您可以去干点别的，待会儿再回来看看ヽ(´•ω•`)､</div>
     </div>
 
     <div class="square_area">
@@ -39,42 +41,80 @@
             }})
 
         if (isPC) {
-            let event_x=0; event_y=0; x=0; y=0; count=0; org_scrollTop=0;
+            let event_x=0; event_y=0; x=0; y=0; count=0;
             window.addEventListener('mousemove', (ev)=>{
                 event_x = ev.x - sqr.offsetLeft - sqr.clientWidth/2;
                 event_y = ev.y - sqr.offsetTop - sqr.clientHeight/2;
-                count = 0;
+                count = 0; maxCount = 60;
+                isMove = true;
+            })
+            window.addEventListener('mousedown', (ev)=>{
+                count = 0; maxCount = 40;
+                isMove = false;
             })
             function draw(){
-                sqr.style.offsetLeft = x + event_x;
-                sqr.style.offsetHeight = y + event_y;
-                if (count < 100){
-                    x += event_x / 100;
-                    y += event_y / 100;
+                if (count < maxCount){
+                    if (isMove){
+                        x += event_x / maxCount;
+                        y += event_y / maxCount;
+                    }
+                    if (sqr.style.opacity < 1){
+                        sqr.style.opacity = +(sqr.style.opacity) + 0.02;
+                    }else{
+                        sqr.style.opacity = 1;
+                    }
+                }
+                else if(sqr.style.opacity > 0){
+                    sqr.style.opacity = +(sqr.style.opacity) - 0.02;
                 }
                 sqr.style.left = x + "px";
                 sqr.style.top = y + "px";
+                console.log(+(sqr.style.opacity))
                 count++;
             }
             setInterval(draw, 1)
             }
     </script>
 
-    <!---->
+    <!--抬头栏-->
     <div class="banner">
-        <div>关系网</div>
+        <a href="pages/relationship.html"><div>关系网</div></a>
         <div>角色图鉴</div>
         <div>人文地理</div>
+    </div>
+    <!--虚构注意-->
+    <div class="notice">
+        该世界观全体架空，当中提及的人物、团体、事件等均没有任何原型，与现实不存在任何联系。
     </div>
 
     <div class="main">
 
+        <!--大标题-->
         <div class="index_header_background">
-            <p class="index_main_header no_select">安城纪事</p>
-            <p class="index_main_en no_select">- Androsa's EndStory -</p>
+            <div style="width:80%;">
+                <p class="index_main_header no_select">安城纪事</p>
+                <p class="index_main_en no_select">- Androsa's EndStory -</p>
+            </div>
+            <div class="index_head_introduction no_select">
+                《安城纪事》是一个完全架空的原创世界观体系。<br/>
+                故事以小小的城邦为主舞台，讲述了人类与所谓“神明”之间的
+            </div>
         </div>
 
-        <div class="line"></div>
+        <div class="line" style="margin: 20px 0;"></div>
+        <div style="display: flex; flex-direction: row;">
+            <div class="index_OC">
+                <div class="index_OC_head">如果您不明白这是什么</div>
+                <div class="index_OC_content">
+                    <p style="margin-bottom: 5px; font-weight: bold; color: rgb(0, 0, 55);">这是我的OC（即Original Character/原创角色）和他们所在的世界。</p>
+                    在此介绍的所有角色、故事、环境，全部都是我的作品，我创造了这一切。<br/>
+                    如果通过以上说明，您还是感觉难以理解，那么也可以这样简单地认为：<br/>
+                    <p style="text-decoration: underline;">假设我是一个小说作家，这里介绍的就是我的小说世界。</p>
+                    虽然我的表达方式并不局限于文字，也并没有连载小说。<br/>
+                    我正通过另外的方式展现这些虚构的人物和世界。
+                </div>
+            </div>
+        </div>
 
     </div>
 </body>

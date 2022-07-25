@@ -7,11 +7,21 @@
         url(../fonts/FZCuHeiSong.woff) format('woff'),
         url(../fonts/FZCuHeiSong.ttf) format('truetype');
 }
+/*方便开发的占位盒子*/
+.temporary_box{
+    background-color: aquamarine;
+    height: 50px;
+}
 
 /*初始化元素，清除内外边距，设置默认鼠标*/
 * {
     padding: 0; margin: 0; 
     cursor: url(../images/cursor/pointer.png), default
+}
+/*清除a标签样式*/
+a{ text-decoration: none; color: aliceblue; }
+a:hover, a:visited, a:link, a:active {
+   color: aliceblue;
 }
 
 body{
@@ -45,19 +55,34 @@ body::-webkit-scrollbar-track {
     text-align: center;
     width: 100%; height: 20px;
     padding: 10px 0px;
-}
-/*菜单栏内部文字*/
+    margin: 0 0 10px 0;
+}/*菜单栏内部文字*/
 .banner div{
     display: inline-block;
     width: 15%;
+    padding: 5px;
+    border-radius: 5px;
     color: aliceblue;
+    cursor: pointer;
     opacity: 0.7;
+    transition: all 0.5s;
 }
 .banner div:hover{
     opacity: 1;
-    cursor: pointer;
+    background-color: rgba(222, 222, 222, 0.9);
+    color: rgb(28, 28, 28);
     font-weight: bold;
+    transition: all 0.5s;
 }
+/*虚构注意*/
+.notice{
+    position: fixed;
+    left: 5px; bottom: 5px;
+    color: rgba(240, 248, 255);
+    opacity: 0.3;
+    font-size: small;
+}
+.notice:hover{ opacity: 0.6; }
 
 /*禁止选择文本*/
 .no_select{
@@ -98,7 +123,7 @@ body::-webkit-scrollbar-track {
     0%,100% { opacity: 0.1; background-color: rgb(226, 226, 226); }
     50% { opacity: 1; background-color: rgb(138, 216, 255); }
 }
-#load { height: 40px;}
+#load { height: 40px; }
 #load span:nth-child(1){ animation-delay: 0.12s; }
 #load span:nth-child(2){ animation-delay: 0.24s; }
 #load span:nth-child(3){ animation-delay: 0.36s; }
@@ -113,8 +138,9 @@ body::-webkit-scrollbar-track {
     border-width: 3px;
     border-style: groove;
     border-color: aliceblue;
-    animation: sqr_rotate 5s ease infinite;
-    transform:rotate(45deg)
+    opacity: 0;
+    animation: sqr_rotate 5s linear infinite;
+    transform: rotate(45deg)
 }
 @keyframes sqr_rotate {
     0% {transform: rotateZ(765deg);}
