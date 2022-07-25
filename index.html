@@ -22,7 +22,7 @@
             <span></span>
         </div>
         <div>Loading</div>
-        <div style="opacity: 0.4;margin-top: 20px;">加载可能需要花费数分钟时间</div>
+        <div style="opacity: 0.4;margin-top: 20px;">首次加载可能需要花费数分钟时间</div>
         <div style="opacity: 0.4;">也许您可以去干点别的，待会儿再回来看看ヽ(´•ω•`)､</div>
     </div>
 
@@ -35,13 +35,13 @@
 
         window.addEventListener('load', function() {
           // 手机端访问，则隐藏旋转方块
-          if (navigator.userAgent.match(/AppleWebKit.*Mobile.*/)) {
+          if(window.screen.availWidth < 768) {
                sqr.style.display = "none";
                isPC = false;
             }})
 
         if (isPC) {
-            let event_x=0; event_y=0; x=0; y=0; count=0;
+            let event_x=0; event_y=0; x=0; y=0; count=0; maxCount = 60;
             window.addEventListener('mousemove', (ev)=>{
                 event_x = ev.x - sqr.offsetLeft - sqr.clientWidth/2;
                 event_y = ev.y - sqr.offsetTop - sqr.clientHeight/2;
@@ -97,7 +97,7 @@
             </div>
             <div class="index_head_introduction no_select">
                 《安城纪事》是一个完全架空的原创世界观体系。<br/>
-                故事以小小的城邦为主舞台，讲述了人类与所谓“神明”之间的
+                剩下的我没想好！！<br/>啊！写简介好难！！！
             </div>
         </div>
 
@@ -114,6 +114,12 @@
                     虽然我的表达方式并不局限于文字，也并没有连载小说。<br/>
                     我正通过另外的方式展现这些虚构的人物和世界。
                 </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <div>
+                还是不知道怎么排版，可能会放一点势力简介
             </div>
         </div>
 

@@ -53,7 +53,7 @@
 }
 .index_OC_head:hover{
     opacity: 1;
-    background-color: rgba(240, 248, 255, 0.65);
+    background-color: rgba(183, 186, 201, 0.8);
     color: rgb(0, 0, 55);
     font-weight: bold;
 }
@@ -64,8 +64,6 @@
 }
 .index_OC:hover .index_OC_content{
     display: block;
-    opacity: 1;
-    transition: all 0.5s;
 }
 
 /*OC定义*/
@@ -73,11 +71,9 @@
     position: absolute;
     display: none;
     width: 600px;
-    background-color: rgba(240, 248, 255, 0.65);
+    background-color: rgba(183, 186, 201, 0.8);
     border:2px solid rgb(237, 237, 237);
     margin: 5px;
     padding: 15px 25px 18px 25px;
     border-radius: 10px;
-    opacity: 0;
-    transition: all 0.5s;
 }

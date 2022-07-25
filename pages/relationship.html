@@ -10,7 +10,7 @@
     <script type="text/JavaScript" src="../JS/general.js"></script>
 </head>
 
-<body>
+<body style="padding-top: 0;">
     <!--加载动画-->
     <div id="loading">
         <div id="load">
@@ -25,5 +25,21 @@
         <div style="opacity: 0.4;">也许您可以去干点别的，待会儿再回来看看ヽ(´•ω•`)､</div>
     </div>
 
-    这里是关系图
+    啥都没有，还在修bug
+
+    <!--画布-->
+    <div id="chart"></div>
+
+    <!--引入D3库，绘图-->
+    <script src="https://d3js.org/d3.v7.min.js";></script>
+    <script type="text/JavaScript">
+        const width = window.innerWidth
+        const height = window.innerHeight
+
+        const svg = d3.select('#chart')
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height-5)
+
+    </script>
 </body>
